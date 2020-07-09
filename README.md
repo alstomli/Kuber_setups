@@ -56,3 +56,16 @@ The output is similar to this: `deployment.apps/hello-minikube created`
 4. The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.  Check if the Pod is up and running: `kubectl get pod`
 5. Get the URL of the exposed Service to view the Service details: `minikube service hello-minikube --url`
 in my case my webpage looks like this:
+![image](https://github.com/alstomli/Kuber_setups/blob/master/Capture.PNG)
+
+### Install Operator SDK
+I have tried to install via github release and from master, neither of them works, so I try to use Homebrew to install and it works! So it turns out that Homebrew works not only on macOS.
+Then I choose Ansible to create the operator because Ansible is written by python and I am more familiar with it than go. 
+
+```
+$ operator-sdk new memcached-operator --api-version=cache.example.com/v1alpha1 --kind=Memcached --type=ansible
+$ cd memcached-operator
+```
+create a memcached-operator project.
+
+Inorder to build and run the operator you need to config the operator, I got an error message `The connection to the server localhost:8080 was refused - did you specify the right host or port?` after a configed and try to build the operator.
