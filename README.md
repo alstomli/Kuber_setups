@@ -56,6 +56,7 @@ The output is similar to this: `deployment.apps/hello-minikube created`
 4. The hello-minikube Pod is now launched but you have to wait until the Pod is up before accessing it via the exposed Service.  Check if the Pod is up and running: `kubectl get pod`
 5. Get the URL of the exposed Service to view the Service details: `minikube service hello-minikube --url`
 in my case my webpage looks like this:
+
 ![image](https://github.com/alstomli/Kuber_setups/blob/master/Capture.PNG)
 
 ### Install Operator SDK
