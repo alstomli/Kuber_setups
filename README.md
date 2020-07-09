@@ -5,14 +5,20 @@ To install the operator SDK, I firstly tryed to follow the steps of https://sdk.
 use `grep -E --color 'vmx|svm' /proc/cpuinfo` to check if there is not output, shut down the machine, goto VMware's processors setting, there should be a virtualization engine.
 
 ### Install kubectl
-1. Download the latest released version: `curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl`
+1. Download the latest released version: 
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+```
+
 2. Make the kubectl binary executable. `chmod +x ./kubectl`
+
 3. Move the binary in to your PATH. `sudo mv ./kubectl /usr/local/bin/kubectl`
 4. Test to ensure the version you installed is up-to-date `kubectl version --client`
 
 ### Install a Hypervisor
 if you want your kubernetes run on host not on VM you can skip to Install Docker part.
 In my example I used KVM.
+
 run `sudo apt install cpu-checker` and then `sudo kvm-ok` to check if your server can run kvm. If it does, you will see things like: `KVM acceleration can be used`run
 ```sudo apt update
 sudo apt install qemu qemu-kvm libvirt-bin bridge-utils virt-manager
