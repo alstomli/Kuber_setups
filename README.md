@@ -11,7 +11,7 @@ use `grep -E --color 'vmx|svm' /proc/cpuinfo` to check if there is not output, s
 4. Test to ensure the version you installed is up-to-date `kubectl version --client`
 
 ### Install a Hypervisor
-if you want your kubernetes run on host not on VM you can skip to Install Docker part
+if you want your kubernetes run on host not on VM you can skip to Install Docker part.
 In my example I used KVM.
 run `sudo apt install cpu-checker` and then `sudo kvm-ok` to check if your server can run kvm. If it does, you will see things like: `KVM acceleration can be used`run
 ```sudo apt update
